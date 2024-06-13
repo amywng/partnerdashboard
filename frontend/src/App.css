@@ -21,35 +21,130 @@
   gap: 25px;
 }
 
-h1.title {
+h3.title {
   text-align: center;
-  font-size: 24pt;
-
-  padding-bottom: 25px;
+  font-size: 36pt;
+  font-family: 'IBM Plex Sans', sans-serif;
+  padding-top: 25px;
+  margin-bottom: 10px;
+  font-weight: 550;
 }
 
+h5.subtitle {
+  text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16pt;
+  color: rgb(95, 95, 95);
+  margin-top: 0;
+  font-weight: 350;
+  letter-spacing: .01em;
+}
 /* PartnerTile */
+
+.image-div {
+  width: 330px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-div img {
+  object-fit: contain;
+  width: 330px;
+  height: 100px;
+}
 
 .partner-tile {
   width: 450px;
-  height: 400px;
+  height: 500px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  border: 1px solid #3d3d3d;
-  border-radius: 12px;
-
   padding: 25px;
-}
-
-.partner-thumbnail {
-  max-width: 330px;
-  max-height: 150px;
 }
 
 .partner-info {
   font-size: 0.9em;
+}
+
+.badge {
+  font-size: .9em;
+}
+
+.partner-tile.active .badge {
+  color: green;
+}
+
+.partner-tile.inactive .badge {
+  color: grey;
+}
+
+.add-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+}
+
+.form-title {
+  grid-column: span 2;
+  text-align: center;
+  margin: 0;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+form > div input[type="text"],
+form > div input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form > div input[type="checkbox"] {
+  margin-top: 10px;
+}
+
+form > button {
+  grid-column: span 2;
+  justify-self: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form > button:hover {
+  background-color: #45a049;
+}
+
+.delete {
+  background-color: red;
+  color: white;
+  border:none;
+  border-radius: 3px;
 }

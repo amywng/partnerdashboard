@@ -4,9 +4,8 @@ import Dashboard from './components/Dashboard'
 function App() {
   return (
     <>
-      <h1 className="title">
-        C4C: Projects
-      </h1>
+      <h3 className="title">Projects</h3>
+      <h5 className="subtitle">Take a look at some of the work we've done.</h5>
       <Dashboard />
     </>
   )
