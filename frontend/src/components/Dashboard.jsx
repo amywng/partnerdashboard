@@ -9,7 +9,7 @@ import AddForm from './AddForm';
 function Dashboard() {
 
   const [partners, setPartners] = useState([]);
-  const [addedPartner, setAddedPartner] = useState(false);
+  const [updatedPartners, setUpdatedPartners] = useState(false);
   
   useEffect(() => {
     fetch('http://localhost:4000/partners', {
@@ -18,19 +18,19 @@ function Dashboard() {
     .then((res) => res.json())
     .then(data => {
       setPartners(data);
-      setAddedPartner(false);
+      setUpdatedPartners(false);
     })
     .catch((error) => {
       console.error('Error fetching partners', error);
     })
-  }, [addedPartner])
+  }, [updatedPartners])
 
   return (
     <div id="main-content">
-      <AddForm onTrigger={setAddedPartner}/>
+      <AddForm onTrigger={setUpdatedPartners}/>
       <div id="main-partners-grid">
         {partners.sort((a,b) => b.active - a.active).map((partner) => (
-          <PartnerTile partnerData={partner} onTrigger={setAddedPartner}/>
+          <PartnerTile partnerData={partner} onTrigger={setUpdatedPartners}/>
         ))}
       </div>
     </div>

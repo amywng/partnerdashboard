@@ -70,11 +70,6 @@ const writeJsonFile = (data) => {
   APPLICATION ROUTES
 */
 
-app.get('/', (req, res) => {
-  console.log('in root');
-  res.status(200).send('root');
-})
-
 app.get('/partners', async (req, res) => {
   res.status(200).send(await readJsonFile());
 })
@@ -114,7 +109,6 @@ app.post('/submit', upload.single('logo'), async (req, res) => {
   }
 });
 
-
 app.post('/button', async (req, res) => {
   try {
     const {name} = req.body;
@@ -130,13 +124,13 @@ app.post('/button', async (req, res) => {
     fs.unlink(path,(function(err) {
       if(err) {
         console.log(err);
-      } 
-      console.log("i delete it");
+      }  else {
+        console.log("logo deleted");
+      }
     }));
     writeJsonFile(filtered);
     res.status(200).json({message: 'Partner deleted successfully!'});
   } catch (error) {
     res.status(500).json({ message: 'Error deleting partner', error });
   }
-  
 })
