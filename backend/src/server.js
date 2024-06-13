@@ -109,7 +109,7 @@ app.post('/submit', upload.single('logo'), async (req, res) => {
   }
 });
 
-app.post('/button', async (req, res) => {
+app.post('/delete', async (req, res) => {
   try {
     const {name} = req.body;
     const existingData = await readJsonFile();

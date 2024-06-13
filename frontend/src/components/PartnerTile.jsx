@@ -15,7 +15,7 @@ function PartnerTile({ partnerData, onTrigger }) {
   const handleDelete = async () => {
     try {
       const data = {'name':name};
-      const response = await fetch('http://localhost:4000/button', {
+      const response = await fetch('http://localhost:4000/delete', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
